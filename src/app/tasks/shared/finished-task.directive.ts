@@ -6,11 +6,11 @@ import { Directive, ElementRef, Input, OnInit } from '@angular/core';
 export class FinishedTaskDirective implements OnInit {
   @Input() finishedTask: boolean;
 
-  constructor(private element: ElementRef) {}
+  constructor(private el: ElementRef) {}
 
   ngOnInit() {
     if (this.finishedTask) {
-      this.element.nativeElement.style.textDecoration = 'line-through';
+      this.el.nativeElement.style.textDecoration = 'line-through';
     }
   }
 }
