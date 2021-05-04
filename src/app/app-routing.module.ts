@@ -5,7 +5,7 @@ import { TaskRoutes } from './tasks';
 export const routes: Routes = [
   {
     path: '',
-    redirectTo: 'tasks/list-tasks',
+    redirectTo: 'tasks/list',
     pathMatch: 'full',
   },
   ...TaskRoutes,

@@ -1,14 +1,18 @@
 import { Routes } from '@angular/router';
 
-import { ListTasksComponent } from './list';
+import { ListTasksComponent, RegisterTaskComponent } from './';
 
 export const TaskRoutes: Routes = [
   {
     path: 'tasks',
-    redirectTo: 'tasks/list-tasks',
+    redirectTo: 'tasks/list',
   },
   {
-    path: 'tasks/list-tasks',
+    path: 'tasks/list',
     component: ListTasksComponent,
+  },
+  {
+    path: 'tasks/register',
+    component: RegisterTaskComponent,
   },
 ];
