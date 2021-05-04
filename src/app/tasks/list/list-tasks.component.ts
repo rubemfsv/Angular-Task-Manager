@@ -22,7 +22,16 @@ export class ListTasksComponent implements OnInit {
   remove($event: any, task: Task): void {
     $event.preventDefault();
 
-    if (confirm('Do you want to remove')) {
+    if (confirm('Do you want to remove task"' + task.name + '"?')) {
+      this.taskService.remove(task.id);
+      this.tasks = this.taskService.listAllTasks();
+    }
+  }
+
+  changeStatus(task: Task): void {
+    if (confirm('Do you want to change the task"' + task.name + '"status ?')) {
+      this.taskService.changeStatus(task.id);
+      this.tasks = this.taskService.listAllTasks();
     }
   }
 }
