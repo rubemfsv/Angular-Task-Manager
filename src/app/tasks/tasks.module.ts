@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 
-import { TaskService } from './shared';
+import { TaskService, FinishedTaskDirective } from './shared';
 import {
   ListTasksComponent,
   RegisterTaskComponent,
@@ -11,7 +11,12 @@ import {
 } from './';
 
 @NgModule({
-  declarations: [ListTasksComponent, RegisterTaskComponent, EditTaskComponent],
+  declarations: [
+    ListTasksComponent,
+    RegisterTaskComponent,
+    EditTaskComponent,
+    FinishedTaskDirective,
+  ],
   imports: [CommonModule, RouterModule, FormsModule],
   providers: [TaskService],
 })
