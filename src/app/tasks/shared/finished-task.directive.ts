@@ -1,10 +1,16 @@
-import { Directive } from '@angular/core';
+import { Directive, ElementRef, Input, OnInit } from '@angular/core';
 
 @Directive({
-  selector: '[appFinishedTask]'
+  selector: '[finishedTask]',
 })
-export class FinishedTaskDirective {
+export class FinishedTaskDirective implements OnInit {
+  @Input() finishedTask: boolean;
 
-  constructor() { }
+  constructor(private element: ElementRef) {}
 
+  ngOnInit() {
+    if (this.finishedTask) {
+      this.element.nativeElement.style.textDecoration = 'line-through';
+    }
+  }
 }
