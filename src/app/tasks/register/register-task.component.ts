@@ -19,7 +19,7 @@ export class RegisterTaskComponent implements OnInit {
   }
 
   register(): void {
-    if ((this, this.formTask.form.valid)) {
+    if (this.formTask.form.valid) {
       this.taskService.register(this.task);
       this.router.navigate(['/tasks']);
     }
